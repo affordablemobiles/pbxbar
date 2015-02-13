@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="agentURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://pbx.secure.a1comms.net/agent/</Value>
+    </Setting>
+    <Setting Name="phoneExt" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="mappingURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://pbx.secure.a1comms.net/mapping/phoneMapping.xml</Value>
+    </Setting>
+    <Setting Name="isChrome" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

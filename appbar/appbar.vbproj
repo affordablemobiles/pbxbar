@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{491BCD5D-CD4C-428B-80EE-1EB94B647D7E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>appbar.My.MyApplication</StartupObject>
+    <RootNamespace>appbar</RootNamespace>
+    <AssemblyName>PBXBar</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>Z:\Visual Studio Projects\PBXBar\deploy\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://pbx.secure.a1comms.net/deploy/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>70</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PBXBar.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PBXBar.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3C2C8C5853443463DF43A62E208C94A26D9387B5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>appbar_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\headset.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp">
+      <HintPath>..\packages\CefSharp.WinForms.1.25.3\lib\net40\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms">
+      <HintPath>..\packages\CefSharp.WinForms.1.25.3\lib\net40\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="class\clsHTTPServer.vb" />
+    <Compile Include="Fonts.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fonts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="graphicalControls\QueuePanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InCallForms\Callback.Designer.vb">
+      <DependentUpon>Callback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InCallForms\Callback.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InCallForms\CallbackList.Designer.vb">
+      <DependentUpon>CallbackList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InCallForms\CallbackList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InCallForms\LeadInfoScript.Designer.vb">
+      <DependentUpon>LeadInfoScript.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InCallForms\LeadInfoScript.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InCallForms\ManualDial.Designer.vb">
+      <DependentUpon>ManualDial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InCallForms\ManualDial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu\AboutBox.Designer.vb">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\AboutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReusableForms\AdminAuth.Designer.vb">
+      <DependentUpon>AdminAuth.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReusableForms\AdminAuth.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="appBar.Designer.vb">
+      <DependentUpon>appBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="appBar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="InCallForms\CallDisposition.Designer.vb">
+      <DependentUpon>CallDisposition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InCallForms\CallDisposition.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="class\clsPhoneMap.vb" />
+    <Compile Include="class\clsWMI.vb" />
+    <Compile Include="class\Functions.vb" />
+    <Compile Include="class\LogonOff.vb" />
+    <Compile Include="class\manager_send.vb" />
+    <Compile Include="class\PBXWebRequest.vb" />
+    <Compile Include="class\vdc_db_query.vb" />
+    <Compile Include="GlobalVars.vb" />
+    <Compile Include="Icons.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MainMenu\Settings.Designer.vb">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InCallForms\Transfer.Designer.vb">
+      <DependentUpon>Transfer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InCallForms\Transfer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Fonts.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InCallForms\Callback.resx">
+      <DependentUpon>Callback.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InCallForms\CallbackList.resx">
+      <DependentUpon>CallbackList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InCallForms\CallDisposition.resx">
+      <DependentUpon>CallDisposition.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InCallForms\LeadInfoScript.resx">
+      <DependentUpon>LeadInfoScript.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InCallForms\ManualDial.resx">
+      <DependentUpon>ManualDial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\AboutBox.resx">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReusableForms\AdminAuth.resx">
+      <DependentUpon>AdminAuth.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="appBar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>appBar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu\Settings.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InCallForms\Transfer.resx">
+      <DependentUpon>Transfer.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="appbar_TemporaryKey.pfx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\MSMHEI.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a1logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a1logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Form Animation and Toast Demo\Form Animation and Toast Demo.vbproj">
+      <Project>{52167193-d380-4686-8476-542dbb37a45c}</Project>
+      <Name>Form Animation and Toast Demo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)packages\CefSharp.WinForms.1.25.3\cef\*.*" "$(TargetDir)" /s /y /i</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Content Include="$(SolutionDir)packages\CefSharp.WinForms.1.25.3\cef\**\*">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <Visible>false</Visible>
+    </Content>
+    <None Include="Resources\time_cog.ico" />
+    <None Include="Resources\tie.ico" />
+    <None Include="Resources\task_list.ico" />
+    <None Include="Resources\target_pointer.ico" />
+    <None Include="Resources\target.ico" />
+    <None Include="Resources\shield_tick.ico" />
+    <None Include="Resources\settings_blend.ico" />
+    <None Include="Resources\settings_2.ico" />
+    <None Include="Resources\search_cog.ico" />
+    <None Include="Resources\phone_24.ico" />
+    <None Include="Resources\person_info.ico" />
+    <None Include="Resources\people_tree.ico" />
+    <None Include="Resources\people_target.ico" />
+    <None Include="Resources\people_map.ico" />
+    <None Include="Resources\people.ico" />
+    <None Include="Resources\package.ico" />
+    <None Include="Resources\megafone.ico" />
+    <None Include="Resources\letter.ico" />
+    <None Include="Resources\laptop_paint.ico" />
+    <None Include="Resources\id_stack.ico" />
+    <None Include="Resources\id_card.ico" />
+    <None Include="Resources\hourglass.ico" />
+    <None Include="Resources\headset_question.ico" />
+    <None Include="Resources\headset.ico" />
+    <None Include="Resources\head_zap.ico" />
+    <None Include="Resources\head_cog.ico" />
+    <None Include="Resources\find_people.ico" />
+    <None Include="Resources\cv.ico" />
+    <None Include="Resources\phone_bubble.ico" />
+    <None Include="Resources\handshake.ico" />
+    <None Include="Resources\credit_cards.ico" />
+    <None Include="Resources\computer_code.ico" />
+    <None Include="Resources\cog_world.ico" />
+    <None Include="Resources\check_list.ico" />
+    <None Include="Resources\check_box.ico" />
+    <None Include="Resources\chat.ico" />
+    <None Include="Resources\call_book.ico" />
+    <None Include="Resources\calendar_time.ico" />
+    <None Include="Resources\calendar.ico" />
+    <None Include="Resources\blue_page.ico" />
+    <None Include="Resources\av_shield.ico" />
+    <None Include="Resources\agent.ico" />
+    <None Include="Resources\24_time.ico" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,7 @@
+deploy
+*/bin
+*/obj
+*.suo
+*.user
+*.pfx
+Backup
