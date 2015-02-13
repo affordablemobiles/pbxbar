@@ -6,29 +6,5 @@
 ]>
 <phoneMapping>
   <computer name="SJM-PC">8001</computer>
-  <computer name="A1C-0806">8002</computer>
-  <computer name="A1C-0592">8005</computer>
-  <computer name="A1C-0584">8006</computer>
-  <computer name="A1C-0593">8007</computer>
-  <computer name="A1C-0646">8008</computer>
-  <computer name="A1C-0588">8009</computer>
-  <computer name="A1C-0788">8010</computer>
-  <computer name="A1C-0416">8011</computer>
-  <computer name="A1C-0420">8013</computer>
-  <computer name="A1C-0418">8014</computer>
-  <computer name="A1C-0487">8015</computer>
-  <computer name="A1C-0515">8016</computer>
-  <computer name="A1C-0583">8017</computer>
-  <computer name="A1C-0513">8018</computer>
-  <computer name="A1C-0787">8019</computer>
-  <computer name="A1C-0591">8020</computer>
-  <computer name="A1C-0618">8021</computer>
-  <computer name="A1C-0519">8022</computer>
-  <computer name="A1C-0587">8023</computer>
-  <computer name="A1C-0509">8025</computer>
-  <computer name="A1C-0819">8033</computer>
-  <computer name="A1C-0422">8035</computer>
-  <computer name="A1C-0512">8036</computer>
-  <computer name="A1C-0800">8037</computer>
-  <computer name="A1C-0634">8040</computer>
+  <computer name="TEST-PC">8002</computer>
 </phoneMapping>
