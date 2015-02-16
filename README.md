@@ -22,3 +22,5 @@ Designed to use the stock GoAutoDial AJAX calls for most things, getting started
 Some things have our internal config hard-coded - for things like internal extension validation on manual dials, etc.
 
 Pull requests for a more generic, configurable way to handle these are welcome.
+
+![screenshot of toolbar](https://raw.github.com/infitialis/pbxbar/master/docs/screenshots/1.%20Pre-Login%20Toolbar.png)
