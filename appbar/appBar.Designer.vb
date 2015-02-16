@@ -23,7 +23,6 @@ Partial Class mainform
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainform))
         Me.cntMainRightClick = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -226,8 +225,8 @@ Partial Class mainform
         '
         'pxA1Logo
         '
-        Me.pxA1Logo.Image = CType(resources.GetObject("pxA1Logo.Image"), System.Drawing.Image)
-        Me.pxA1Logo.InitialImage = CType(resources.GetObject("pxA1Logo.InitialImage"), System.Drawing.Image)
+        Me.pxA1Logo.Image = Global.appbar.My.Resources.Icons.a1logo
+        Me.pxA1Logo.InitialImage = Global.appbar.My.Resources.Icons.a1logo
         Me.pxA1Logo.Location = New System.Drawing.Point(1063, 7)
         Me.pxA1Logo.Name = "pxA1Logo"
         Me.pxA1Logo.Size = New System.Drawing.Size(156, 34)
