@@ -11,10 +11,11 @@ It allows agents to use GoAutoDial for Inbound and Outbound calls while staying 
 * Auto "screen-pop" of a URL in the browser when a call comes in - URL specified from Asterisk variable for defining inside custom smart AGI IVR.
 * Phone extension mapped to Windows PC name for config-less agent roaming.
 * Colour coded "calls in queue" number indicator for Inbound Call queue.
+* CefSharp (Embedded Chromium) used for "Call Script" tab.
 
 ## GoAutoDial
 
-Designed to use the stock GoAutoDial AJAX calls for most things, getting started is as simple as pointing the toolbar to the agent login URL via the settings panel and a path the the phone mapping XML file.
+Designed to use the stock GoAutoDial AJAX calls for most things, getting started is as simple as pointing the toolbar to the agent login URL via the settings panel and a path to the phone mapping XML file.
 
 ## Internal Config
 
