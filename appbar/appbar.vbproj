@@ -56,6 +56,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>PBXBar.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+	<PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>3C2C8C5853443463DF43A62E208C94A26D9387B5</ManifestCertificateThumbprint>
