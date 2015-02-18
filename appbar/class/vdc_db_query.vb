@@ -168,6 +168,38 @@ Public Class vdc_db_query
         Dim strReturn As String = Me.postRequest("updateDISPO", variables)
     End Sub
 
+    Public Sub pauseCodeSubmit(status As String)
+        Dim variables As New Dictionary(Of String, String)
+        variables("server_ip") = If(GlobalVars.jsVars.ContainsKey("server_ip"), GlobalVars.jsVars("server_ip"), String.Empty)
+        variables("session_name") = If(GlobalVars.jsVars.ContainsKey("session_name"), GlobalVars.jsVars("session_name"), String.Empty)
+        variables("user") = GlobalVars.username
+        variables("pass") = GlobalVars.password
+        variables("format") = "text"
+        variables("status") = status
+        variables("agent_log_id") = If(GlobalVars.jsVars.ContainsKey("agent_log_id"), GlobalVars.jsVars("agent_log_id"), String.Empty)
+        variables("campaign") = GlobalVars.campaign
+        variables("extension") = If(GlobalVars.jsVars.ContainsKey("extension"), GlobalVars.jsVars("extension"), String.Empty)
+        variables("protocol") = If(GlobalVars.jsVars.ContainsKey("protocol"), GlobalVars.jsVars("protocol"), String.Empty)
+        variables("phone_ip") = If(GlobalVars.jsVars.ContainsKey("phone_ip"), GlobalVars.jsVars("phone_ip"), String.Empty)
+        variables("enable_sipsak_messages") = If(GlobalVars.jsVars.ContainsKey("enable_sipsak_messages"), GlobalVars.jsVars("enable_sipsak_messages"), String.Empty)
+        variables("campaign_cid") = If(GlobalVars.jsVars.ContainsKey("LastCallCID"), GlobalVars.jsVars("LastCallCID"), String.Empty)
+        variables("auto_dial_level") = If(GlobalVars.jsVars.ContainsKey("starting_dial_level"), GlobalVars.jsVars("starting_dial_level"), String.Empty)
+        variables("stage") = GlobalVars.PauseCode_Count.ToString()
+
+        Dim strReturn As String = Me.postRequest("PauseCodeSubmit", variables)
+
+        Dim check_PC_array As String() = strReturn.Split(vbLf)
+        Try
+            If check_PC_array(1) = "Next agent_log_id:" Then
+                GlobalVars.jsVars("agent_log_id") = check_PC_array(2)
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        GlobalVars.PauseCode_Count += 1
+    End Sub
+
     Public Sub updateLead(title As String, firstName As String, middleName As String, lastName As String, _
                           addressLine1 As String, townCity As String, county As String, postCode As String, _
                           phoneNumber As String, altPhoneNumber As String, email As String, comments As String)

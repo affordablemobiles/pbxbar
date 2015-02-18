@@ -113,6 +113,19 @@ Public Class Functions
         Return result
     End Function
 
+    Public Function getPauseCodeList() As Dictionary(Of String, String)
+        Dim result As New Dictionary(Of String, String)
+        If GlobalVars.jsArrays("pause_codes").Length = GlobalVars.jsArrays("pause_code_names").Length Then
+            For i As Integer = 0 To GlobalVars.jsArrays("pause_codes").Length - 1
+                result.Add(GlobalVars.jsArrays("pause_codes")(i), GlobalVars.jsArrays("pause_code_names")(i))
+            Next
+        Else
+            MessageBox.Show("Error! Pause Code list and name match-up list not the same length!")
+        End If
+
+        Return result
+    End Function
+
     Public Sub updateDateTime()
         Dim now As DateTime = DateTime.Now
         GlobalVars.jsVars("filedate") = now.ToString("yyyyMMdd-HHmmss")

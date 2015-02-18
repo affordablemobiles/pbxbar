@@ -38,6 +38,8 @@
     Public MD_call_live As Boolean = False
     Public MD_previewing_lead As Boolean = False
 
+    Public PauseCode_Count As Integer = 1
+
     Public uniqueid As String = String.Empty
     Public lead_id As String = String.Empty
     Public vendor_lead_code As String = String.Empty

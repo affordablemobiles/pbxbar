@@ -32,7 +32,7 @@
     <InstallUrl>http://pbx.secure.a1comms.net/deploy/</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>70</ApplicationRevision>
+    <ApplicationRevision>72</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -119,6 +119,12 @@
       <DependentUpon>CallbackList.vb</DependentUpon>
     </Compile>
     <Compile Include="InCallForms\CallbackList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InCallForms\PauseCodes.Designer.vb">
+      <DependentUpon>PauseCodes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InCallForms\PauseCodes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InCallForms\LeadInfoScript.Designer.vb">
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InCallForms\CallbackList.resx">
       <DependentUpon>CallbackList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InCallForms\PauseCodes.resx">
+      <DependentUpon>PauseCodes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InCallForms\CallDisposition.resx">
       <DependentUpon>CallDisposition.vb</DependentUpon>

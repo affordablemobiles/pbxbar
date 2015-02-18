@@ -93,6 +93,7 @@ Public Class mainform
 
 #Region "Declared Form Variables"
     Public WithEvents frmLogin As Login
+    Public WithEvents frmPauseCodes As PauseCodes
     Public WithEvents frmTransfer As Transfer
     Public WithEvents frmDispo As CallDisposition
     Public WithEvents frmManualDial As ManualDial
@@ -407,6 +408,7 @@ Public Class mainform
             Me.btnManualDial_Disable()
             Me.btnDialNext_Disable()
             GlobalVars.timeSinceChange = 0
+            GlobalVars.PauseCode_Count = 1
 
             GlobalVars.jsVars = New Dictionary(Of String, String)
             GlobalVars.jsArrays = New Dictionary(Of String, String())
@@ -468,6 +470,16 @@ Public Class mainform
         Dim slice As New PBXBar.Toast.ToastForm(5000, "Logged In" & vbLf & vbLf & GlobalVars.username & vbLf & GlobalVars.campaign)
         slice.Height = 125
         slice.Show()
+    End Sub
+#End Region
+
+#Region "frmPauseCodes Events"
+    Public Sub afterPauseCode() Handles frmPauseCodes.PauseCodeComplete
+        ' Submit Pause Code
+        GlobalVars.vdcClass.pauseCodeSubmit(frmPauseCodes.pauseCodeValue)
+
+        ' Reset buttons ready to continue.
+        Me.btnPauseResume_Enable()
     End Sub
 #End Region
 
@@ -1142,6 +1154,10 @@ Public Class mainform
     End Sub
 
     Private Sub AutoDial_Resume_Pause(taskaction As String, agent_log As String)
+        Me.AutoDial_Resume_Pause(taskaction, agent_log, String.Empty, False)
+    End Sub
+
+    Private Sub AutoDial_Resume_Pause(taskaction As String, agent_log As String, temp_reason As String, temp_auto As Boolean)
         If taskaction = "VDADready" Then
             If GlobalVars.blockReady Then
                 MessageBox.Show("You Can't Go Ready!" & vbLf & "Problem Detected" & vbLf & vbLf & "Either Your Headset Isn't Connected" & vbLf & "or" & vbLf & "Possible Rogue Customer Still On The Line?", "Problem Detected", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -1164,6 +1180,11 @@ Public Class mainform
             GlobalVars.AutoDialReady = False
             GlobalVars.AutoDialWaiting = False
             GlobalVars.PausedSeconds = 0
+        End If
+
+        If agent_log = "NEW_ID" Then
+            ' If we're getting a new agent_log_id, reset the pause code count so we don't get another new one when we submit that!
+            GlobalVars.PauseCode_Count = 0
         End If
 
         Dim variables As New Dictionary(Of String, String)
@@ -1193,7 +1214,23 @@ Public Class mainform
         End Try
 
         If GlobalVars.VDRP_stage = "PAUSED" Then
-            Me.btnPauseResume_Paused()
+            If GlobalVars.jsVars("agent_pause_codes_active") = "FORCE" Then
+                Me.btnPauseResume_ReasonWait()
+
+                If IsNothing(frmPauseCodes) Then
+                    frmPauseCodes = New PauseCodes()
+                ElseIf Not frmPauseCodes.Visible Then
+                    frmPauseCodes = New PauseCodes()
+                End If
+
+                If temp_auto = True Then
+                    frmPauseCodes.AutoComplete(temp_reason)
+                Else
+                    frmPauseCodes.Show()
+                End If
+            Else
+                Me.btnPauseResume_Paused()
+            End If
         Else
             Me.btnPauseResume_Ready()
         End If
@@ -1555,6 +1592,12 @@ Public Class mainform
         Me.btnLogonOff_Enable()
         Me.btnManualDial_Enable()
         Me.btnDialNext_Enable()
+    End Sub
+    Private Sub btnPauseResume_ReasonWait()
+        Me.btnLogonOff_Disable()
+        Me.btnManualDial_Disable()
+        Me.btnDialNext_Disable()
+        Me.btnPauseResume_Disable()
     End Sub
     Private Sub btnPauseResume_Ready()
         btnPauseResume.Text = "Not" & vbLf & "Ready"
