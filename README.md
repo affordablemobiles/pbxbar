@@ -12,6 +12,8 @@ It allows agents to use GoAutoDial for Inbound and Outbound calls while staying 
 * Phone extension mapped to Windows PC name for config-less agent roaming.
 * Colour coded "calls in queue" number indicator for Inbound Call queue.
 * CefSharp (Embedded Chromium) used for "Call Script" tab.
+* Pause Codes when set to "FORCE" in campaign.
+* PCI DSS Compliant Start/Stop Call Recordings (Chrome Extension [here](https://github.com/infitialis/pbxbar-startstop-recording-pci))
 
 ## GoAutoDial
 
