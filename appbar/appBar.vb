@@ -835,7 +835,7 @@ Public Class mainform
             frmLeadInfo.txtAltPhoneNo.Text = GlobalVars.func.stripNonNumeric(check_VDIC_array(27))
             frmLeadInfo.txtEmail.Text = check_VDIC_array(28)
 
-            frmLeadInfo.txtComments.Text = Regex.Replace(check_VDIC_array(28), "\|\|A1_POPURL:(.+)\|A1_ORDID:(.+)\|A1_FULLNAME:(.+)\|A1_REJECTREASON:(.+)\|A1_ORDERSTATUS:(.+)\|A1_STOCKSTATUS:(.+)\|A1_WISPER:(.+)\|A1_VERIFIED:(.+)\|\|", "")
+            frmLeadInfo.txtComments.Text = Regex.Replace(check_VDIC_array(28), "\|\|A1_POPURL:(.+)\|A1_ORDID:(.+)\|A1_FULLNAME:(.+)\|A1_REJECTREASON:(.+)\|A1_ORDERSTATUS:(.+)\|A1_STOCKSTATUS:(.+)\|A1_WISPER:(.*)\|A1_VERIFIED:(.+)\|\|", "")
 
             frmLeadInfo.Show()
 

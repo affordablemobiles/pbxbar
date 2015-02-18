@@ -32,7 +32,7 @@
     <InstallUrl>http://pbx.secure.a1comms.net/deploy/</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>72</ApplicationRevision>
+    <ApplicationRevision>73</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -56,7 +56,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>PBXBar.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
-	<PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>3C2C8C5853443463DF43A62E208C94A26D9387B5</ManifestCertificateThumbprint>
