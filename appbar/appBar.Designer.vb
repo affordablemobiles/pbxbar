@@ -27,7 +27,7 @@ Partial Class mainform
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangePauseCodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnLoginOrOff = New System.Windows.Forms.Button()
@@ -58,42 +58,43 @@ Partial Class mainform
         '
         'cntMainRightClick
         '
-        Me.cntMainRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.ToolStripMenuItem2, Me.TestToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitToolStripMenuItem})
+        Me.cntMainRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.ToolStripMenuItem2, Me.ChangePauseCodeToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitToolStripMenuItem})
         Me.cntMainRightClick.Name = "cntMainRightClick"
-        Me.cntMainRightClick.Size = New System.Drawing.Size(117, 104)
+        Me.cntMainRightClick.Size = New System.Drawing.Size(225, 126)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'SettingsToolStripMenuItem
         '
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(113, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(221, 6)
         '
-        'TestToolStripMenuItem
+        'ChangePauseCodeToolStripMenuItem
         '
-        Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
-        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
-        Me.TestToolStripMenuItem.Text = "Test"
+        Me.ChangePauseCodeToolStripMenuItem.Enabled = False
+        Me.ChangePauseCodeToolStripMenuItem.Name = "ChangePauseCodeToolStripMenuItem"
+        Me.ChangePauseCodeToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.ChangePauseCodeToolStripMenuItem.Text = "Change ""Not Ready"" Reason"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(113, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(221, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'btnLoginOrOff
@@ -361,7 +362,7 @@ Partial Class mainform
     Friend WithEvents lblCallStatus As System.Windows.Forms.Label
     Friend WithEvents lblOrderID As System.Windows.Forms.Label
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TestToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ChangePauseCodeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents btnManualDial As System.Windows.Forms.Button

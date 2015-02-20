@@ -459,6 +459,10 @@ Public Class mainform
         GlobalVars.VDRP_stage = GlobalVars.jsVars("VDRP_stage")
         If GlobalVars.VDRP_stage = "PAUSED" Then
             Me.btnPauseResume_Paused()
+
+            If GlobalVars.jsVars("agent_pause_codes_active") = "FORCE" Then
+                Me.ChangePauseCodeToolStripMenuItem.Enabled = True
+            End If
         Else
             Me.btnPauseResume_Ready()
         End If
@@ -480,6 +484,14 @@ Public Class mainform
 
         ' Reset buttons ready to continue.
         Me.btnPauseResume_Enable()
+
+        ' Allow the agents to change the pause code.
+        Me.ChangePauseCodeToolStripMenuItem.Enabled = True
+
+        ' If we've changed the pause code, reset the timer displayed on the toolbar.
+        If GlobalVars.PauseCode_Count > 0 Then
+            GlobalVars.PausedSeconds = 0
+        End If
     End Sub
 #End Region
 
@@ -1463,9 +1475,16 @@ Public Class mainform
         settings.ShowWithAuth()
     End Sub
 
-    Private Sub TestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestToolStripMenuItem.Click
-        ''Dim test As New LeadInfoScript()
-        ''test.Show()
+    Private Sub ChangePauseCodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangePauseCodeToolStripMenuItem.Click
+        Me.btnPauseResume_ReasonWait()
+
+        If IsNothing(frmPauseCodes) Then
+            frmPauseCodes = New PauseCodes()
+        ElseIf Not frmPauseCodes.Visible Then
+            frmPauseCodes = New PauseCodes()
+        End If
+
+        frmPauseCodes.Show()
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -1605,11 +1624,13 @@ Public Class mainform
         Me.btnLogonOff_Disable()
         Me.btnManualDial_Disable()
         Me.btnDialNext_Disable()
+        Me.ChangePauseCodeToolStripMenuItem.Enabled = False
     End Sub
     Private Sub btnPauseResume_Disable()
         btnPauseResume.Enabled = False
         btnPauseResume.BackColor = Color.Empty
         Me.btnManualDial_Disable()
+        Me.ChangePauseCodeToolStripMenuItem.Enabled = False
     End Sub
 #End Region
 
