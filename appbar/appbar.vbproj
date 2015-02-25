@@ -32,7 +32,7 @@
     <InstallUrl>http://pbx.secure.a1comms.net/deploy/</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>73</ApplicationRevision>
+    <ApplicationRevision>75</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -72,6 +72,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\headset.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CefSharp">
@@ -120,6 +123,12 @@
       <DependentUpon>CallbackList.vb</DependentUpon>
     </Compile>
     <Compile Include="InCallForms\CallbackList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InCallForms\Keypad.Designer.vb">
+      <DependentUpon>Keypad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InCallForms\Keypad.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InCallForms\PauseCodes.Designer.vb">
@@ -224,6 +233,9 @@
     <EmbeddedResource Include="InCallForms\CallbackList.resx">
       <DependentUpon>CallbackList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InCallForms\Keypad.resx">
+      <DependentUpon>Keypad.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InCallForms\PauseCodes.resx">
       <DependentUpon>PauseCodes.vb</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +282,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="appbar_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

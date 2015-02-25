@@ -28,6 +28,7 @@ Partial Class mainform
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ChangePauseCodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KeypadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnLoginOrOff = New System.Windows.Forms.Button()
@@ -52,15 +53,16 @@ Partial Class mainform
         Me.lblOrderID = New System.Windows.Forms.Label()
         Me.btnManualDial = New System.Windows.Forms.Button()
         Me.btnCallbackList = New System.Windows.Forms.Button()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
         Me.cntMainRightClick.SuspendLayout()
         CType(Me.pxA1Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cntMainRightClick
         '
-        Me.cntMainRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.ToolStripMenuItem2, Me.ChangePauseCodeToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitToolStripMenuItem})
+        Me.cntMainRightClick.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.ToolStripMenuItem2, Me.ChangePauseCodeToolStripMenuItem, Me.ToolStripMenuItem4, Me.KeypadToolStripMenuItem, Me.ToolStripMenuItem1, Me.ExitToolStripMenuItem})
         Me.cntMainRightClick.Name = "cntMainRightClick"
-        Me.cntMainRightClick.Size = New System.Drawing.Size(225, 126)
+        Me.cntMainRightClick.Size = New System.Drawing.Size(225, 154)
         '
         'AboutToolStripMenuItem
         '
@@ -85,6 +87,13 @@ Partial Class mainform
         Me.ChangePauseCodeToolStripMenuItem.Name = "ChangePauseCodeToolStripMenuItem"
         Me.ChangePauseCodeToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
         Me.ChangePauseCodeToolStripMenuItem.Text = "Change ""Not Ready"" Reason"
+        '
+        'KeypadToolStripMenuItem
+        '
+        Me.KeypadToolStripMenuItem.Enabled = False
+        Me.KeypadToolStripMenuItem.Name = "KeypadToolStripMenuItem"
+        Me.KeypadToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.KeypadToolStripMenuItem.Text = "Show Keypad"
         '
         'ToolStripMenuItem1
         '
@@ -301,6 +310,11 @@ Partial Class mainform
         Me.btnCallbackList.Text = "Call Back" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "List"
         Me.btnCallbackList.UseVisualStyleBackColor = False
         '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(221, 6)
+        '
         'mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -367,4 +381,6 @@ Partial Class mainform
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents btnManualDial As System.Windows.Forms.Button
     Friend WithEvents btnCallbackList As System.Windows.Forms.Button
+    Friend WithEvents KeypadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
 End Class

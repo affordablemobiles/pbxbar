@@ -98,6 +98,7 @@ Public Class mainform
     Public WithEvents frmDispo As CallDisposition
     Public WithEvents frmManualDial As ManualDial
     Public WithEvents frmLeadInfo As LeadInfoScript
+    Public WithEvents frmKeypad As Keypad
 #End Region
 
 #Region "Declared Events"
@@ -568,6 +569,12 @@ Public Class mainform
         ''GlobalVars.inOUT = "OUT"
         GlobalVars.jsVars("dialed_label") = "MANUAL_DIALNOW"
         Me.ManualDialNext(String.Empty, String.Empty, String.Empty, frmManualDial.numberToDial, "lookup", String.Empty, "0", GlobalVars.jsVars("dialed_label"), frmManualDial.dialPrefix, False)
+    End Sub
+#End Region
+
+#Region "frmKeypad Events"
+    Private Sub sendDTMF(button As String) Handles frmKeypad.keypadButtonPress
+        GlobalVars.manager.sendDTMF(button)
     End Sub
 #End Region
 #End Region
@@ -1332,6 +1339,12 @@ Public Class mainform
 
         GlobalVars.sentHangupLog = False
 
+        If Not IsNothing(frmKeypad) Then
+            If frmKeypad.Visible Then
+                frmKeypad.Close()
+            End If
+        End If
+
         If Not IsNothing(frmTransfer) Then
             If frmTransfer.Visible Then
                 frmTransfer.Close()
@@ -1487,6 +1500,16 @@ Public Class mainform
         frmPauseCodes.Show()
     End Sub
 
+    Private Sub KeypadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KeypadToolStripMenuItem.Click
+        If IsNothing(frmKeypad) Then
+            frmKeypad = New Keypad()
+        ElseIf Not frmKeypad.Visible Then
+            frmKeypad = New Keypad()
+        End If
+
+        frmKeypad.Show()
+    End Sub
+
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         If btnReconnect.Enabled = True Then
             Dim result As DialogResult = MessageBox.Show("You are about to exit while still logged in!" & vbLf & "This incident will be logged with IT." & vbLf & vbLf & "You should only do this if there has been an error." & vbLf & vbLf & "Are you sure you'd like to continue?", "You Are Still Logged In", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -1510,10 +1533,14 @@ Public Class mainform
     Private Sub btnHangup_Enable()
         btnHangUp.BackColor = Color.LightCoral
         btnHangUp.Enabled = True
+        ' Also enable Keypad
+        KeypadToolStripMenuItem.Enabled = True
     End Sub
     Private Sub btnHangup_Disable()
         btnHangUp.Enabled = False
         btnHangUp.BackColor = Color.Empty
+        ' Also disable Keypad
+        KeypadToolStripMenuItem.Enabled = False
     End Sub
 
     Private Sub btnHold_Enable()
@@ -1633,5 +1660,4 @@ Public Class mainform
         Me.ChangePauseCodeToolStripMenuItem.Enabled = False
     End Sub
 #End Region
-
 End Class

@@ -353,4 +353,22 @@ Public Class manager_send
             ''MessageBox.Show("New Session ID: """ & vars(1) & """")
         End If
     End Sub
+
+    Public Sub sendDTMF(keypress As String)
+        Dim variables As New Dictionary(Of String, String)
+        variables("server_ip") = If(GlobalVars.jsVars.ContainsKey("server_ip"), GlobalVars.jsVars("server_ip"), String.Empty)
+        variables("session_name") = If(GlobalVars.jsVars.ContainsKey("session_name"), GlobalVars.jsVars("session_name"), String.Empty)
+        variables("user") = GlobalVars.username
+        variables("pass") = GlobalVars.password
+        variables("ACTION") = "SysCIDdtmfOriginate"
+        variables("format") = "text"
+        variables("channel") = If(GlobalVars.jsVars.ContainsKey("dtmf_send_extension"), GlobalVars.jsVars("dtmf_send_extension"), String.Empty)
+        variables("queryCID") = keypress
+        variables("exten") = If(GlobalVars.jsVars.ContainsKey("dtmf_silent_prefix"), GlobalVars.jsVars("dtmf_silent_prefix"), String.Empty) & If(GlobalVars.jsVars.ContainsKey("session_id"), GlobalVars.jsVars("session_id"), String.Empty)
+        variables("ext_context") = If(GlobalVars.jsVars.ContainsKey("ext_context"), GlobalVars.jsVars("ext_context"), String.Empty)
+        variables("ext_priority") = "1"
+
+        Dim request As New PBXWebRequest()
+        Dim strReturn As String = request.postRequest("manager_send.php", variables)
+    End Sub
 End Class
