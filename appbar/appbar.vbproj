@@ -73,9 +73,6 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\headset.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CefSharp">
       <HintPath>..\packages\CefSharp.WinForms.1.25.3\lib\net40\CefSharp.dll</HintPath>
