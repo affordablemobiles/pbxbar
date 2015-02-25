@@ -289,6 +289,10 @@
     <None Include="Resources\a1logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CButton\CButtonLib.vbproj">
+      <Project>{24116fe6-8501-45f0-add0-67fffb037baf}</Project>
+      <Name>CButtonLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Form Animation and Toast Demo\Form Animation and Toast Demo.vbproj">
       <Project>{52167193-d380-4686-8476-542dbb37a45c}</Project>
       <Name>Form Animation and Toast Demo</Name>
